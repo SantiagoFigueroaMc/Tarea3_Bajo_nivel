@@ -3,11 +3,11 @@ CC = g++
 ajedrez: main.o functions.o
 	$(CC) -o ajedrez main.o functions.o
 	
-main.o: main.c
-	$(CC) -c -o main.o main.c
+main.o: main.cpp functions.h
+	$(CC) -c -o main.o main.cpp
 
-functions.o: functions.c
-	$(CC) -c -o functions.o functions.c
+functions.o: functions.cpp
+	$(CC) -c -o functions.o functions.cpp
 	
 clear:
 	rm *.o
