@@ -1,6 +1,6 @@
 #include <iostream>
 #include <string>
-#include "functions.h"
+#include "io.h"
 
 int main(){
 	mover_pieza("a1", "b3");
