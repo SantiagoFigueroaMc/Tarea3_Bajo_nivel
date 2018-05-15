@@ -7,7 +7,7 @@ ajedrez: main.o io.o
 main.o: main.cpp io.h
 	$(CC) -c -o main.o main.cpp
 
-io.o: io.cpp
+io.o: io.cpp io.h
 	$(CC) -c -o io.o io.cpp
 	
 clear:
