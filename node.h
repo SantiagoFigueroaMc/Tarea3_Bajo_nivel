@@ -1,17 +1,20 @@
 #ifndef NODE
 #define NODE
+#include <string>
+using namespace std;
 
-//Estructura de un nodo, con su valor y un puntero al proximo nodo.
+// Estructura de un nodo (casilla), contenido (KB, PW, " ")
+// y un puntero al proximo nodo.
 typedef struct node {
-	int value;
+	string contenido; 
 	struct node *nextNode;
 } node;
 
-//Metodo que inserta un valor i en un nodo n
-void SetValue(node *n,int i);
+//Metodo que inserta un contenido i en un nodo n
+void SetValue(node *n, string i);
 
 //Metodo que retorna el valor de un nodo n.
-int GetValue(node *n);
+string GetValue(node *n);
 
 //Metodo que setea a un nodo n como nodo siguiente de un nodo h.
 void SetNext(node *h,node *n);

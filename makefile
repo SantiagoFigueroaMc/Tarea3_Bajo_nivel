@@ -2,7 +2,7 @@ CC = g++
 FLAGS = -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
 
 ajedrez: main.o io.o
-	$(CC) $(FLAGS) -o ajedrez main.o functions.o
+	$(CC) $(FLAGS) -o ajedrez main.o io.o
 	
 main.o: main.cpp io.h node.h
 	$(CC) -c -o main.o main.cpp

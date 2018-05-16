@@ -1,13 +1,12 @@
 #include "node.h"
-
-//Metodo que inserta un valor i en un nodo n
-void SetValue(node *n,int i){
-	n -> value = i;
+//Metodo que inserta un contenido i en un nodo n
+void SetValue(node *n,string i){
+	n -> contenido = i;
 }
 
-//Metodo que retorna el valor de un nodo n.
-int GetValue(node *n){
-	return n -> value;
+//Metodo que retorna el contenido de un nodo n.
+string GetValue(node *n){
+	return n -> contenido;
 }
 
 //Metodo que setea a un nodo n como nodo siguiente de un nodo h.
