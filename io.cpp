@@ -1,6 +1,7 @@
 #include "io.h"
 #include <string>
 
-void mover_pieza(string *pos_i, string *pos_f){
-	
+void mostrar_tablero(string tablero){
+	cout << tablero << endl;
 }
+

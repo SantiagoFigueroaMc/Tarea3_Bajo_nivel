@@ -5,8 +5,6 @@
 #include "node.h"
 using namespace std;
 
-void mostrar_tablero(string *tablero);
-
 string cargar_tablero(node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH);
 
 #endif

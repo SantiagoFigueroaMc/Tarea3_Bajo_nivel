@@ -1,9 +1,6 @@
-#include "ui.h"
-#include "node.h"
+#include "ui.cpp"
+#include "node.cpp"
 
-void mostrar_tablero(string *tablero){
-	cout << *tablero << endl;
-}
 
 string cargar_tablero(node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH){
 	string tablero = "";
