@@ -1,14 +1,14 @@
 #ifndef NODE
 #define NODE
+
+#include <iostream>
 #include <string>
+
 using namespace std;
 
 // Estructura de un nodo (casilla), contenido (KB, PW, " ")
 // y un puntero al proximo nodo.
-typedef struct node {
-	string contenido; 
-	struct node *nextNode;
-} node;
+typedef struct node {string contenido; struct node *nextNode;} node;
 
 //Metodo que inserta un contenido i en un nodo n
 void SetValue(node *n, string i);
