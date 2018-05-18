@@ -1,5 +1,5 @@
-#include "ui.cpp"
-#include "node.cpp"
+#include "ui.h"
+#include "node.h"
 
 
 string cargar_tablero(node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH){

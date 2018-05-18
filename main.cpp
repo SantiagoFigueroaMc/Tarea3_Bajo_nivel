@@ -1,36 +1,17 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+
+#include "io.h"
+#include "chess.h"
+#include "ui.h"
+#include "node.h"
+
 using namespace std;
 
-#include "io.cpp"
-#include "chess.cpp"
-#include "ui.cpp"
-#include "node.cpp"
-
-// TENEMOS QUE SACAR ESTO.
-/*
-// Estructura de un nodo (casilla), contenido (KB, PW, " ")
-// y un puntero al proximo nodo.
-typedef struct node {string contenido; struct node *nextNode;} node;
-
-//Metodo que inserta un contenido i en un nodo n
-void SetValue(node *n, string i);
-
-//Metodo que retorna el valor de un nodo n.
-string GetValue(node *n);
-
-//Metodo que setea a un nodo n como nodo siguiente de un nodo h.
-void SetNext(node *h,node *n);
-
-//Metodo que retorna un puntero del nodo proximo al nodo n.
-node *GetNext(node *n);
-*/
-
-
-
-
 int main(int argc, char**argv){
+	mostrar_tablero("Hola mi amiguito");
+
 	node a1;
 	node a2;
 	node a3;
