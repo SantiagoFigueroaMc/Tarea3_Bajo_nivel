@@ -1,9 +1,12 @@
 #include "ui.h"
 #include "node.h"
-
-
-string cargar_tablero(node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH){
-	string tablero = "";
+#include <string>
+using namespace std;
+string cargar_tablero(node headA, node headB, 
+					node headC, node headD, 
+					node headE, node headF, 
+					node headG, node headH){
+	const string tablero = "";
 	node tempA = headA;
 	node tempB = headB;
 	node tempC = headC;
@@ -15,11 +18,13 @@ string cargar_tablero(node headA, node headB, node headC, node headD, node headE
 	
 	for (int i = 0; i < 10; i++){
 		if (i == 0){
-			tablero += "   a   b   c   d   e   f   g   h   "
+			tablero = "     a    b    c    d    e    f    g    h";
 		}
-		if (i == 9){}
-		else{
-			tablero += " tb cb ab rb rb ..." + "\n" + tablero;
+		if (i == 9){
+			tablero = "     a    b    c    d    e    f    g    h" + "\n" + tablero;
+		}
+		if ((i!=0) && (i!=9)){
+			tablero = (string)i + " | " + GetValue(&tempA) + " | " + GetValue(&tempB) + " | " + GetValue(&tempC) + " | " + GetValue(&tempD) + " | " + GetValue(&tempE) + " | " + GetValue(&tempF) + " | " + GetValue(&tempG) + " | " + GetValue(&tempH) + " | " + (string)i + "\n" + tablero;
 			tempA = GetNext(&tempA);
 			tempB = GetNext(&tempB);
 			tempC = GetNext(&tempC);

@@ -1,7 +1,6 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-
 #include "io.h"
 #include "chess.h"
 #include "ui.h"
@@ -10,7 +9,23 @@
 using namespace std;
 
 int main(int argc, char**argv){
-	mostrar_tablero("Hola mi amiguito");
+	cout << "Ajedrez de bajo nivel." << endl;
+	string jugador1 = "";
+	string jugador2 = "";
+	cout << "Ingrese el nombre del jugador 1:";
+	cin >> jugador1;
+	if (!cin){
+		jugador1 = "J1";
+		cin.clear();
+		cin.ignore(10000, '\n');
+	}
+	cout << "Ingrese el nombre del jugador 2:";
+	cin >> jugador2;
+	if (!cin){
+		jugador2 = "J2";
+		cin.clear();
+		cin.ignore(10000, '\n');
+	}
 
 	node a1;
 	node a2;
@@ -205,7 +220,18 @@ int main(int argc, char**argv){
 	SetNext(&h7, &h8);
 	
 	string Tablero = cargar_tablero(a1,b1,c1,d1,e1,f1,g1,h1);
-	cout << Tablero << endl;
+	mostrar_tablero(Tablero);
+	
+	int jugar = 1; // Mientras vale 1, se juega. 0 para salir.
+	while (jugar == 1){
+		if (turno_numero % 2 == 0){
+			jugador_actual = jugador1;
+		}
+		else{
+			jugador_actual = jugador2;
+		}
+		cout << "Turno del jugador:" << jugador_actual << endl;
+	}
 	
 	/*
 	cout << GetValue(&a1) << endl;

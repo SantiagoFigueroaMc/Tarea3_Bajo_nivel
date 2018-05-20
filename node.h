@@ -1,7 +1,8 @@
 #ifndef NODE
 #define NODE
 
-#include <string>
+#include <iostream>
+#include <string>	
 using namespace std;
 
 // Estructura de un nodo (casilla), contenido (KB, PW, " ")
@@ -22,5 +23,6 @@ void SetNext(node *h,node *n);
 
 //Metodo que retorna un puntero del nodo proximo al nodo n.
 node *GetNext(node *n);
+
 
 #endif

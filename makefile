@@ -4,18 +4,19 @@ FLAGS = -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
 ajedrez: main.o node.o io.o ui.o
 	$(CC) $(FLAGS) -o ajedrez main.o node.o io.o ui.o
 	
-main.o: main.cpp node.h io.h ui.h
-	$(CC) -c -o main.o main.cpp
-
-io.o: io.cpp io.h
-	$(CC) -c -o io.o io.cpp
-	
-ui.o: ui.cpp node.h ui.h
-	$(CC) -c -o ui.o ui.cpp
+main.o: main.cpp node.o
+	$(CC) -c main.cpp
 
 node.o: node.cpp node.h
-	$(CC) -c -o node.o node.cpp
+	$(CC) -c node.cpp
 	
+ui.o: ui.cpp node.o ui.h node.h
+	$(CC) -c ui.cpp
+
+
+io.o: io.cpp
+	$(CC) -c io.cpp
+
 clear:
 	rm *.o
 	rm ajedrez

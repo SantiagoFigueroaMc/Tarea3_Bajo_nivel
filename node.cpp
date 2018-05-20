@@ -1,6 +1,4 @@
 #include "node.h"
-using namespace std;
-
 
 //Metodo que inserta un contenido i en un nodo n
 void SetValue(node *n,string i){
