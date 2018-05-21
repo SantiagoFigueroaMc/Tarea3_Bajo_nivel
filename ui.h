@@ -4,7 +4,7 @@
 #include <string>
 
 
-std::string cargar_tablero(node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH);
+std::string cargar_tablero(node *headA, node *headB, node *headC, node *headD, node *headE, node *headF, node *headG, node *headH);
 
 #endif
 
