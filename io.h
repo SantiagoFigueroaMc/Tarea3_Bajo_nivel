@@ -1,5 +1,5 @@
-#ifndef _FUNCIONES
-#define _FUNCIONES
+#ifndef _IO
+#define _IO
 using namespace std;
 #include <string>
 

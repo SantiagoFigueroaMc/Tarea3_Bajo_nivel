@@ -1,5 +1,5 @@
-#ifndef NODE
-#define NODE
+#ifndef _UI
+#define _UI
 #include "node.h"
 #include <string>
 
