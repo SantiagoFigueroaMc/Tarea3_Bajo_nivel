@@ -122,14 +122,14 @@ int main(int argc, char**argv){
 	node d6;
 	node d7;
 	node d8;
-	SetValue(&d1, "KW");
+	SetValue(&d1, "QW");
 	SetValue(&d2, "PW");
 	SetValue(&d3, "  ");
 	SetValue(&d4, "  ");
 	SetValue(&d5, "  ");
 	SetValue(&d6, "  ");
 	SetValue(&d7, "PD");
-	SetValue(&d8, "KD");
+	SetValue(&d8, "QD");
 	SetNext(&headD, &d1);
 	SetNext(&d1, &d2);
 	SetNext(&d2, &d3);
@@ -148,14 +148,14 @@ int main(int argc, char**argv){
 	node e6;
 	node e7;
 	node e8;
-	SetValue(&e1, "QW");
+	SetValue(&e1, "KW");
 	SetValue(&e2, "PW");
 	SetValue(&e3, "  ");
 	SetValue(&e4, "  ");
 	SetValue(&e5, "  ");
 	SetValue(&e6, "  ");
 	SetValue(&e7, "PD");
-	SetValue(&e8, "QD");
+	SetValue(&e8, "KD");
 	SetNext(&headE, &e1);
 	SetNext(&e1, &e2);
 	SetNext(&e2, &e3);
@@ -294,5 +294,6 @@ int main(int argc, char**argv){
 		}
 	
 	}
+	cout << "Fin de la partida." << endl;
 	return 0;
 }
