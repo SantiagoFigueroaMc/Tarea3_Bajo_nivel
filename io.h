@@ -4,7 +4,7 @@ using namespace std;
 #include <iostream>
 #include "node.h"
 #include <string>
-#include "chess.h"
+#include "validar.h"
 
 void mostrar_tablero(string tablero);
 

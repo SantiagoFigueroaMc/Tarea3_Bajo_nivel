@@ -3,6 +3,7 @@
 #include <string>
 #include "io.h"
 #include "chess.h"
+#include "validar.h"
 #include "ui.h"
 #include "node.h"
 using namespace std;
@@ -256,8 +257,18 @@ int main(int argc, char**argv){
 		linea = 0;
 		
 		while (instruc >> casilla_inicial_string){
-			if (turno_numero % 2 == 0){linea++;}
+			linea++;
 			instruc >> casilla_final_string;
+			// Revisar la primera casilla.
+			if ((casilla_inicial_string[0] < 'a') || (casilla_inicial_string[0] > 'h') || (casilla_inicial_string[1] < '1') || (casilla_inicial_string[1] > '8')){
+				cout << "Instruccion invalida en la linea " << linea << endl;
+				break;
+			}
+			// Revisar la segunda casilla.
+			if ((casilla_final_string[0] < 'a') || (casilla_final_string[0] > 'h') || (casilla_final_string[1] < '1') || (casilla_final_string[1] > '8')){
+				cout << "Instruccion invalida en la linea " << linea << endl;
+				break;
+			}
 			if (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH)){
 				cout << "Instruccion invalida en la linea " << linea << endl;
 				break;
@@ -310,7 +321,7 @@ int main(int argc, char**argv){
 			while (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH)){
 				cin.clear();
 				cin.ignore(10000, '\n');
-				cout << "Movimiento invalido (fuera del tablero)\nIngrese nuevamente: ";
+				cout << "Ingrese nuevamente: ";
 				cin >> casilla_inicial_string;
 				if (casilla_inicial_string == "0"){jugar = 0; break;}
 				cin >> casilla_final_string;
