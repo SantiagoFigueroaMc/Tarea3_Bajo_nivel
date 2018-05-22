@@ -8,7 +8,7 @@ void mostrar_tablero(string tablero){
 // 1. Hay una pieza en el cuadrado inicial.
 // 2. La pieza corresponde al jugador que esta jugando.
 // 3. La posicion final debe ser válida.	
-void string_a_nodo(string pos_i, string pos_f, node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH){
+bool string_a_nodo(int color, string pos_i, string pos_f, node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH){
 	node* nodo_i;
 	if (pos_i[0] == 'a'){nodo_i = GetNext(&headA);}
 	if (pos_i[0] == 'b'){nodo_i = GetNext(&headB);}
@@ -21,6 +21,9 @@ void string_a_nodo(string pos_i, string pos_f, node headA, node headB, node head
 	
 	for (int k = 0; k < (int)(pos_i[1])-49; k++){
 		nodo_i = GetNext(nodo_i);
+	}
+	if (!validarPos_i(*nodo_i, color)){
+		return false;
 	}
 	string valor = GetValue(nodo_i);
 	SetValue(nodo_i, "  ");
@@ -38,7 +41,10 @@ void string_a_nodo(string pos_i, string pos_f, node headA, node headB, node head
 	for (int k = 0; k < (int)(pos_f[1])-49; k++){
 		nodo_f = GetNext(nodo_f);
 	}
+	if (!validarPos_f(*nodo_f, color)){
+		return false;
+	}
 	SetValue(nodo_f, valor);
 	
-	
+	return true;
 }

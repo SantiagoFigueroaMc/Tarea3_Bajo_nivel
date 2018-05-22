@@ -17,6 +17,7 @@ int main(int argc, char**argv){
 	node casilla_final_node;
 	string delimiter = " ";
 	int turno_numero = 0;
+	int linea;
 	
 	cout << "Ingrese el nombre del jugador 1: ";
 	cin >> jugador1;
@@ -245,25 +246,27 @@ int main(int argc, char**argv){
 	
 	string Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 	mostrar_tablero(Tablero); // Primera vez que se muestra el tablero
-	
+	turno_numero = 0;
 	if (argc > 2){
 	//recibir codigo para instrucciones en archivo
 		ifstream instruc;
 		instruc.open(argv[2]);
 		
 		string jugador_actual = "";
-		
-		int jugar = 1; // Mientras vale 1, se juega. 0 para salir.
+		linea = 0;
 		
 		while (instruc >> casilla_inicial_string){
+			if (turno_numero % 2 == 0){linea++;}
 			instruc >> casilla_final_string;
-			
+			if (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH)){
+				cout << "Instruccion invalida en la linea " << linea << endl;
+				break;
+			}
 			if (turno_numero % 2 == 0) {jugador_actual = jugador1;}
 			else {jugador_actual = jugador2;}
 			cout << "\nTurno del jugador: " << jugador_actual << endl;
 			cout << casilla_inicial_string << " - " << casilla_final_string << endl;
 			
-			string_a_nodo(casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH);
 			cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 			Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 			mostrar_tablero(Tablero);
@@ -286,7 +289,32 @@ int main(int argc, char**argv){
 			cin >> casilla_inicial_string;
 			if (casilla_inicial_string == "0"){jugar = 0; break;}
 			cin >> casilla_final_string;
-			string_a_nodo(casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH);
+			// Revisar la primera casilla.
+			while ((casilla_inicial_string[0] < 'a') || (casilla_inicial_string[0] > 'h') || (casilla_inicial_string[1] < '1') || (casilla_inicial_string[1] > '8')){
+				cin.clear();
+				cin.ignore(10000, '\n');
+				cout << "Seleccion de pieza invalida (fuera del tablero)\nIngrese nuevamente: ";
+				cin >> casilla_inicial_string;
+				if (casilla_inicial_string == "0"){jugar = 0; break;}
+				cin >> casilla_final_string;
+			}
+			// Revisar la segunda casilla.
+			while ((casilla_final_string[0] < 'a') || (casilla_final_string[0] > 'h') || (casilla_final_string[1] < '1') || (casilla_final_string[1] > '8')){
+				cin.clear();
+				cin.ignore(10000, '\n');
+				cout << "Movimiento invalido (fuera del tablero)\nIngrese nuevamente: ";
+				cin >> casilla_inicial_string;
+				if (casilla_inicial_string == "0"){jugar = 0; break;}
+				cin >> casilla_final_string;
+			}
+			while (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH)){
+				cin.clear();
+				cin.ignore(10000, '\n');
+				cout << "Movimiento invalido (fuera del tablero)\nIngrese nuevamente: ";
+				cin >> casilla_inicial_string;
+				if (casilla_inicial_string == "0"){jugar = 0; break;}
+				cin >> casilla_final_string;
+			}
 			cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 			Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 			mostrar_tablero(Tablero);
