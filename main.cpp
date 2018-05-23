@@ -245,6 +245,32 @@ int main(int argc, char**argv){
 	SetNext(&h6, &h7);
 	SetNext(&h7, &h8);
 	
+	node2 AA;
+	node2 A;
+	SetUp2(&A, &headA);
+	node2 B;
+	SetUp2(&B, &headB);
+	node2 C;
+	SetUp2(&C, &headC);
+	node2 D;
+	SetUp2(&D, &headD);
+	node2 E;
+	SetUp2(&E, &headE);
+	node2 F;
+	SetUp2(&F, &headF);
+	node2 G;
+	SetUp2(&G, &headG);
+	node2 H;
+	SetUp2(&H, &headH);
+	SetNext2(&AA, &A);
+	SetNext2(&A, &B);
+	SetNext2(&B, &C);
+	SetNext2(&C, &D);
+	SetNext2(&D, &E);
+	SetNext2(&E, &F);
+	SetNext2(&F, &G);
+	SetNext2(&G, &H);
+	
 	string Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 	mostrar_tablero(Tablero); // Primera vez que se muestra el tablero
 	turno_numero = 0;
@@ -326,6 +352,7 @@ int main(int argc, char**argv){
 				if (casilla_inicial_string == "0"){jugar = 0; break;}
 				cin >> casilla_final_string;
 			}
+			// movimiento_permitido(char pieza, int color, string coordenada_i, string coordenada_f, node2 AA);
 			cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 			Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 			mostrar_tablero(Tablero);

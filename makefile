@@ -1,6 +1,6 @@
 CC = g++
 FLAGS = -Wall -Wextra -Wundef -Werror -Wuninitialized -Winit-self
-DEPENDENCIAS = main.o node.o io.o ui.o chess.o validar.o
+DEPENDENCIAS = main.o node.o io.o ui.o chess.o validar.o check.o
 COMUNISTAS = *.o
 SOCIALISTAS = ajedrez
 
@@ -24,6 +24,9 @@ chess.o: chess.cpp
 
 validar.o: validar.cpp
 	$(CC) -c validar.cpp
+
+check.o: check.cpp
+	$(CC) -c check.cpp
 
 pinochet:
 	rm $(COMUNISTAS)
