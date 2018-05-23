@@ -22,7 +22,7 @@ Cosas que funcionan:
 	6. Si el rey muere, el juego termina.
 	7. Flags.
 	8. Makefile.
-	9. Si un peon alcanza el otro lado se transforma en reina.
+	9. Si un peon alcanza el otro lado se transforma en la pieza que el jugador desee.
 	
 Cosas que no funcionan:
 	1. Reglas como Jaque Mate, jaque y enroque no estan programadas.

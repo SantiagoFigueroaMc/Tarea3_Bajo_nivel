@@ -121,9 +121,7 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 	//reglas peon blanco
 	if ((pieza=='P') && (color==0)){
 		if ((x_i == 2) && (y_i == y_f)){// avanzar 1, 2
-			cout << "Primer movimiento" << endl;
 			if (x_f - x_i == 1){
-				cout << "y_i, y_f: " << y_i << y_f << endl;
 				if (casilla_ocupada(x_f, y_f, AA)){
 					return false;
 				}
@@ -146,7 +144,6 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 			return true;
 		}
 		
-		cout << "Revisando si puede comer" << endl;
 		if ((x_f == x_i+1) && (y_f == y_i+1)){// comer y_f - 1
 			if (!casilla_ocupada(x_f, y_f, AA)){
 				return false;
@@ -164,7 +161,6 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 	//reglas peon negro
 	if ((pieza=='P') && (color==1)){
 		if ((x_i == 7) && (y_i == y_f)){// avanzar 1, 2
-			cout << "Primer movimiento" << endl;
 			if (x_f - x_i == -1){
 				if (casilla_ocupada(x_f, y_f, AA)){
 					return false;
@@ -188,7 +184,6 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 			return true;
 		}
 		
-		cout << "Revisando si puede comer" << endl;
 		if ((x_f == x_i-1) && (y_f == y_i+1)){// comer y_f - 1
 			if (!casilla_ocupada(x_f, y_f, AA)){
 				return false;
