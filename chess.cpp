@@ -5,7 +5,8 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 	y_i=(int)coordenada_i[1];
 	x_f=(int)coordenada_f[0];
 	y_f=(int)coordenada_f[1];
-	if (pieza=='N'){//
+	//reglas caballo
+	if (pieza=='N'){
 		if ((x_i+2==x_f) && (x_i+1==x_f)){return true;}
 		if ((x_i+2==x_f) && (x_i-1==x_f)){return true;}
 		if ((x_i-2==x_f) && (x_i+1==x_f)){return true;}
@@ -112,7 +113,19 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 		if (((x_f-x_i)==(y_f-y_i)) || ((x_f-x_i)==-(y_f-y_i))){return true;}
 		else {return false;}}
 	//reglas peon blanco		
-
+	if ((pieza=='P') && (color==0)){
+		if (x_i==2){
+			if ((y_f-y_i==0){if (x_f-x_i==1 || x_f-x_i==2)){if (!casilla_ocupada(x_f,y_i) || !casilla_ocupada(x_i+1,y_i)){return true;}}}
+		if ((y_f-y_i==0) && (x_f-1==x_i)){if (!casilla_ocupada(x_f,y_i)){return true;}}
+		if ((y_f+1==y_i) || (y_f-1==y_i)){if (x_f-1=x_i){return true;}}
+		else {return false;}
+	//reglas peon negro
+	if ((pieza=='P') && (color==1)){
+		if (x_i==2){
+			if ((y_f-y_i==0){if (x_f-x_i==-1 || x_f-x_i==-2)){if (!casilla_ocupada(x_f,y_i) || !casilla_ocupada(x_i-1,y_i)){return true;}}}
+		if ((y_f-y_i==0) && (x_f+1==x_i)){if (!casilla_ocupada(x_f,y_i)){return true;}}
+		if ((y_f+1==y_i) || (y_f-1==y_i)){if (x_f+1=x_i){return true;}}
+		else {return false;}
 	}
 
 
