@@ -8,7 +8,7 @@ Cosas que funcionan:
 	4. Comprobar que el movimiento sea valido:
 		a. Que no hayan piezas del mismo equipo en el camino de los peones, torres, reina y alfiles.
 		b. Que la posicion final se pueda alcanzar siguiendo las reglas clasicas del ajedrez.
-			i.	
+			i.	Peon (a medias).
 			ii.	Alfil.
 			iii.Torre.
 			iv.	Caballo.
@@ -19,10 +19,11 @@ Cosas que funcionan:
 			i.	Cualquier input. (incluyendo "hola mundo").
 		b. Por texto:
 			i.	Cualquier entrada tambien. +Indica la linea donde esta el error.
-	6. Flags.
-	7. Makefile.
+	6. Si el rey muere, el juego termina.
+	7. Flags.
+	8. Makefile.
 	
 Cosas que no funcionan:
 	1. Reglas como Jaque Mate, jaque y enroque no estan programadas.
 	2. El rey puede ir a una posicion en la que se encuentra en riesgo. Puede ponerse en jaque.
-	3. 
+	3. No hay IA.
