@@ -5,6 +5,7 @@ using namespace std;
 #include "node.h"
 #include <string>
 #include "validar.h"
+#include "chess.h"
 
 void mostrar_tablero(string tablero);
 

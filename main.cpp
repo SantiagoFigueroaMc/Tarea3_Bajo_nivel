@@ -295,7 +295,7 @@ int main(int argc, char**argv){
 				cout << "Instruccion invalida en la linea " << linea << endl;
 				break;
 			}
-			if (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH)){
+			if (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, AA, headA,headB,headC,headD,headE,headF,headG,headH)){
 				cout << "Instruccion invalida en la linea " << linea << endl;
 				break;
 			}
@@ -344,7 +344,7 @@ int main(int argc, char**argv){
 				if (casilla_inicial_string == "0"){jugar = 0; break;}
 				cin >> casilla_final_string;
 			}
-			while (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, headA,headB,headC,headD,headE,headF,headG,headH)){
+			while (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, AA, headA,headB,headC,headD,headE,headF,headG,headH)){
 				cin.clear();
 				cin.ignore(10000, '\n');
 				cout << "Ingrese nuevamente: ";
@@ -352,7 +352,7 @@ int main(int argc, char**argv){
 				if (casilla_inicial_string == "0"){jugar = 0; break;}
 				cin >> casilla_final_string;
 			}
-			// movimiento_permitido(char pieza, int color, string coordenada_i, string coordenada_f, node2 AA);
+			
 			cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 			Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 			mostrar_tablero(Tablero);
