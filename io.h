@@ -9,5 +9,5 @@ using namespace std;
 
 void mostrar_tablero(string tablero);
 
-bool string_a_nodo(int color, string pos_i, string pos_f, node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH);
+bool string_a_nodo(int color, string pos_i, string pos_f, node2 AA, node headA, node headB, node headC, node headD, node headE, node headF, node headG, node headH);
 #endif
