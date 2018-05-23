@@ -8,7 +8,7 @@ Cosas que funcionan:
 	4. Comprobar que el movimiento sea valido:
 		a. Que no hayan piezas del mismo equipo en el camino de los peones, torres, reina y alfiles.
 		b. Que la posicion final se pueda alcanzar siguiendo las reglas clasicas del ajedrez.
-			i.	Peon (a medias).
+			i.	Peon.
 			ii.	Alfil.
 			iii.Torre.
 			iv.	Caballo.
@@ -27,3 +27,4 @@ Cosas que no funcionan:
 	1. Reglas como Jaque Mate, jaque y enroque no estan programadas.
 	2. El rey puede ir a una posicion en la que se encuentra en riesgo. Puede ponerse en jaque.
 	3. No hay IA.
+	4. Transformar peon a reina.

@@ -1,6 +1,6 @@
 #include "check.h"
 
-bool casilla_ocupada(int x, int y, node2 AA){
+bool casilla_ocupada(int y, int x, node2 AA){
 	node2* temp_node2 = GetNext2(&AA);
 	for (int fila_actual = 1; fila_actual < x; fila_actual++){
 		temp_node2 = GetNext2(temp_node2);

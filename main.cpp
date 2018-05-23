@@ -344,11 +344,12 @@ int main(int argc, char**argv){
 				if (casilla_inicial_string == "0"){jugar = 0; break;}
 				cin >> casilla_final_string;
 			}
-
+			
+			// Obtener valor de la pieza final
 			node2* temp2 = GetNext2(&AA);
 			for (char fila_actual = 'a'; fila_actual < casilla_final_string[0]; (int)fila_actual++){
 				temp2 = GetNext2(temp2);
-			}// bien
+			}
 			node* temp = GetUp2(temp2);
 			temp = GetNext(temp);
 			for (int columna_actual = 1; columna_actual < (int)casilla_final_string[1]-48; columna_actual++){
@@ -356,7 +357,8 @@ int main(int argc, char**argv){
 			}
 			string Val = GetValue(temp);
 			if (Val[0] == 'K'){jugar = 0;}
-
+			// si el rey del otro equipo estaba en la posicion final, se acaba el juego.
+			
 			while (!string_a_nodo(turno_numero % 2, casilla_inicial_string, casilla_final_string, AA, headA,headB,headC,headD,headE,headF,headG,headH)){
 				cin.clear();
 				cin.ignore(10000, '\n');
