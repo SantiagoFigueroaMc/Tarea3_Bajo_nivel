@@ -26,7 +26,7 @@ void SetNext2(node *h,  node *n){
 }
 
 //Metodo que define el nodo n como el inicio de una lista en un nodo h
-void SetUp2(node *h, node *n){
+void SetUp2(node2 *h, node *n){
 	h -> upNode = n;
 }
 
