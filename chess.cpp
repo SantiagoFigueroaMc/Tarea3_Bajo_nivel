@@ -1,10 +1,10 @@
 #include "chess.h"
 bool movimiento_permitido(char pieza, int color, string coordenada_i,string coordenada_f, node2 AA){
 	int x_i, y_i, x_f, y_f;	
-	x_i=(int)coordenada_i[0]-48;
-	y_i=(int)coordenada_i[1]-48;
-	x_f=(int)coordenada_f[0]-48;
-	y_f=(int)coordenada_f[1]-48;
+	x_i=(int)coordenada_i[1]-48;
+	y_i=(int)coordenada_i[0]-48;
+	x_f=(int)coordenada_f[1]-48;
+	y_f=(int)coordenada_f[0]-48;
 	//reglas caballo
 	if (pieza=='N'){
 		if ((x_i+2==x_f) && (y_i+1==y_f)){return true;}
@@ -102,26 +102,61 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 				ty+=j;}
 			valor=1;}
 		else {return false;}
-		if (valor=1){return true;}
-		if (valor=0){return false;}}
+		if (valor == 1){return true;}
+		if (valor == 0){return false;}}
 	//reglas rey
-	if (pieza='K'){
+	if (pieza == 'K'){
 		if ((x_f-x_i<=1) && (x_f-x_i>=-1)){if ((y_f-y_i<=1) && (y_f-y_i>=-1)){
 			if ((x_f-x_i==0) && (y_f-y_i>0)){return true;}
 			if ((x_f-x_i==0) && (y_f-y_i<0)){return true;}
 			if ((y_f-y_i==0) && (x_f-x_i>0)){return true;}
 			if ((y_f-y_i==0) && (x_f-x_i<0)){return true;}
-			if (((x_f-x_i)==(y_f-y_i)) || ((x_f-x_i)==-(y_f-y_i))){return true;}}}
+			if (((x_f-x_i)==(y_f-y_i)) || ((x_f-x_i)==-1*(y_f-y_i))){return true;}}}
 		else {return false;}}
-	//reglas peon blanco		
+	//reglas peon blanco
 	if ((pieza=='P') && (color==0)){
-		if (x_i==2){
-			if ((y_f-y_i)==0){if ((x_f-x_i==1) || (x_f-x_i==2)){if ((!casilla_ocupada(x_i+1,y_i,AA))){
-										if ((!casilla_ocupada(x_i+2,y_i,AA)) && (x_i+2==x_f)){return true;}
-										return true;}}}}
-		if ((y_f-y_i==0) && (x_f-1==x_i)){if (!casilla_ocupada(x_f,y_i,AA)){return true;}}
-		if ((y_f+1==y_i) || (y_f-1==y_i)){if (x_f-1==x_i){return true;}}
+		cout << "Revisando al peon.\nx_i, y_i: " << x_i << y_i << "\nx_f, y_f: " << x_f << y_f << endl;
+		
+		if ((x_i==2) && (y_i == y_f)){// avanzar 1, 2
+			cout << "Primer movimiento" << endl;
+			if (x_f - x_i == 1){
+				if (casilla_ocupada(x_f, y_f, AA)){
+					return false;
+				}
+				return true;
+			}
+			if (x_f - x_i == 2){
+				if (casilla_ocupada(x_f-1, y_f, AA)){
+					return false;
+				}
+				if (casilla_ocupada(x_f, y_f, AA)){
+					return false;
+				}
+				return true;
+			}
+		}
+		if ((y_f-y_i == 0) && (x_f-1==x_i)){// avanzar 1
+			if (casilla_ocupada(x_f, y_f, AA)){
+				return false;
+			}
+			return true;
+		}
+		
+		cout << "Revisando si puede comer" << endl;
+		if ((x_f == x_i+1) && (y_f == y_i+1)){// comer y_f - 1
+			if (!casilla_ocupada(x_f, y_f, AA)){
+				return false;
+			}
+			return true;
+		}
+		if ((x_f == x_i+1) && (y_f == y_i-1)){// comer y_f + 1
+			if (!casilla_ocupada(x_f, y_f, AA)){
+				return false;
+			}
+			return true;
+		}
 		else {return false;}}
+		
 	//reglas peon negro
 	if ((pieza=='P') && (color==1)){
 		if (x_i==2){
