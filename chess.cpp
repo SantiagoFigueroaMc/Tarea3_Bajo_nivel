@@ -47,7 +47,7 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 		else {return false;}}
 	//reglas alfil
 	if (pieza=='B'){
-		if ((x_f-x_i)==(y_f-y_i)){
+		if (((x_f-x_i)==(y_f-y_i)) || ((x_f-x_i)==-(y_f-y_i))){
 			if (x_f-x_i<0){i=-1;}
 			else {i=1;}
 			if (y_f-y_i<0){j=-1;}
@@ -104,8 +104,14 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 		if (valor=1){return true}
 		if (valor=0){return false}}
 	//reglas rey
-//	if (pieza='K'){
-		
+	if (pieza='K'){
+		if ((x_f-x_i==0) && (y_f-y_i>0)){return true;}
+		if ((x_f-x_i==0) && (y_f-y_i<0)){return true;}
+		if ((y_f-y_i==0) && (x_f-x_i>0)){return true;}
+		if ((y_f-y_i==0) && (x_f-x_i<0)){return true;}
+		if (((x_f-x_i)==(y_f-y_i)) || ((x_f-x_i)==-(y_f-y_i))){return true;}
+		else {return false;}}
+	//reglas peon blanco		
 
 	}
 
