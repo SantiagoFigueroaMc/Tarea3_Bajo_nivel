@@ -129,34 +129,4 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 	}
 
 
-// PARA EL ALFIN
-/*
-Abajo-Izquierda
-inicial    3,5
-final      1,3
-final - inicial = -2,-2
 
-Arriba-Derecha
-i= 1,1
-f= 2,2
-f - i = 1,1
-
-Abajo-Derecha
-i = 3,3
-f = 1,5
-f-i =-2,2
-
-Arriba-Izquierda
-i = 4,8
-f = 6,6
-f-i = 2,-2
-*/
-/*
-while (casilla_ocupada(x,y) || (x != pos_f_x...) || (y !=...)){x++; y++;} //x4 para alfil
-while (casilla_ocupada(x,y) //torre
-...
-
-//=========================================
-bool casilla_ocupada(int x, int y)
-
-*/
