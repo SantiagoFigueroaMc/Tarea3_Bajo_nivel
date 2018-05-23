@@ -116,8 +116,8 @@ bool movimiento_permitido(char pieza, int color, string coordenada_i,string coor
 	//reglas peon blanco		
 	if ((pieza=='P') && (color==0)){
 		if (x_i==2){
-			if ((y_f-y_i)==0){if ((x_f-x_i==1) || (x_f-x_i==2)){if ((!casilla_ocupada(x_i+1,y_i,AA)){
-										if ((!casilla_ocupada(x_i+2,y_i,AA)) && (x_i+2=x_f)){return true;}
+			if ((y_f-y_i)==0){if ((x_f-x_i==1) || (x_f-x_i==2)){if ((!casilla_ocupada(x_i+1,y_i,AA))){
+										if ((!casilla_ocupada(x_i+2,y_i,AA)) && (x_i+2==x_f)){return true;}
 										return true;}}}}
 		if ((y_f-y_i==0) && (x_f-1==x_i)){if (!casilla_ocupada(x_f,y_i,AA)){return true;}}
 		if ((y_f+1==y_i) || (y_f-1==y_i)){if (x_f-1==x_i){return true;}}
