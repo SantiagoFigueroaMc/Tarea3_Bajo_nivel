@@ -1,3 +1,7 @@
+Integrantes:
+	Figueroa Santiago
+	Moraga Javier
+
 Cosas que funcionan:
 	1. Leer instrucciones por consola y texto.
 	2. Turnar a los jugadores.
