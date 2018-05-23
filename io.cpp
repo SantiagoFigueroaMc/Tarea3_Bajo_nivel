@@ -54,11 +54,9 @@ bool string_a_nodo(int color, string pos_i, string pos_f, node2 AA, node headA, 
 	string coordenada_f = "00";
 	coordenada_f[0] = (int)pos_f[0]-48;
 	coordenada_f[1] = pos_f[1];
-		
 	if (!movimiento_permitido(pieza, color2, coordenada_i, coordenada_f, AA)){
 		return false;
 	}
-	
 	
 	SetValue(nodo_i, "  ");
 	SetValue(nodo_f, valor);
