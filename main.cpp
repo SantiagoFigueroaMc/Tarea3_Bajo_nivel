@@ -352,10 +352,22 @@ int main(int argc, char**argv){
 				if (casilla_inicial_string == "0"){jugar = 0; break;}
 				cin >> casilla_final_string;
 			}
-			
 			cout << "\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n" << endl;
 			Tablero = cargar_tablero(&headA,&headB,&headC,&headD,&headE,&headF,&headG,&headH);
 			mostrar_tablero(Tablero);
+			
+			node2* temp2 = GetNext2(&AA);
+			for (char fila_actual = 'a'; fila_actual < casilla_final_string[0]; fila_actual++){
+				temp2 = GetNext2(temp2);
+			}
+			node* temp = GetUp2(temp2);
+			temp = GetNext(temp);
+			for (int columna_actual = 1; columna_actual < (int)casilla_final_string[1]; columna_actual++){
+				temp = GetNext(temp);
+			}
+			string Val = GetValue(temp);
+			if (Val[0] == 'K'){jugar = 0; break;}
+			
 			turno_numero++;
 		}
 	

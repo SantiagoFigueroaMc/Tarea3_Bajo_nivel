@@ -58,6 +58,7 @@ bool string_a_nodo(int color, string pos_i, string pos_f, node2 AA, node headA, 
 		return false;
 	}
 	
+	if (GetValue(nodo_f)[0] == 'K'){cout << "Fin del juego" << endl;}
 	SetValue(nodo_i, "  ");
 	SetValue(nodo_f, valor);
 	return true;
