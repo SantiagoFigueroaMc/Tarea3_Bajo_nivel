@@ -20,8 +20,9 @@ node *GetNext(node *n){
 	return n -> nextNode;
 }
 
-//Metodo que setea el nodo n como siguiente al nodo h
-void SetNext2(node *h,  node *n){
+
+//Metodo que setea el nodo2 n como siguiente al nodo2 h
+void SetNext2(node2 *h,  node2 *n){
 	h -> nextNode = n;
 }
 

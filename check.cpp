@@ -14,4 +14,3 @@ bool casilla_ocupada(int x, int y, node2 AA){
 	if (Val == "  "){return false;}
 	else {return true;}
 }
-

@@ -247,20 +247,20 @@ int main(int argc, char**argv){
 	
 	node2 AA;
 	node2 A;
-	SetUp2(&A, &headA);
 	node2 B;
-	SetUp2(&B, &headB);
 	node2 C;
-	SetUp2(&C, &headC);
 	node2 D;
-	SetUp2(&D, &headD);
 	node2 E;
-	SetUp2(&E, &headE);
 	node2 F;
-	SetUp2(&F, &headF);
 	node2 G;
-	SetUp2(&G, &headG);
 	node2 H;
+	SetUp2(&A, &headA);
+	SetUp2(&B, &headB);
+	SetUp2(&C, &headC);
+	SetUp2(&D, &headD);
+	SetUp2(&E, &headE);
+	SetUp2(&F, &headF);
+	SetUp2(&G, &headG);
 	SetUp2(&H, &headH);
 	SetNext2(&AA, &A);
 	SetNext2(&A, &B);
