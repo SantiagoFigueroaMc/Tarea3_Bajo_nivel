@@ -22,9 +22,9 @@ Cosas que funcionan:
 	6. Si el rey muere, el juego termina.
 	7. Flags.
 	8. Makefile.
+	9. Si un peon alcanza el otro lado se transforma en reina.
 	
 Cosas que no funcionan:
 	1. Reglas como Jaque Mate, jaque y enroque no estan programadas.
 	2. El rey puede ir a una posicion en la que se encuentra en riesgo. Puede ponerse en jaque.
 	3. No hay IA.
-	4. Transformar peon a reina.
